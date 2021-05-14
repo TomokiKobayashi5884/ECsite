@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions',
     :passwords => 'users/passwords',
     :confirmations => 'users/confirmations',
-    :unlocks => 'users/unlocks'
+    :unlocks => 'users/unlocks',
   }
   
   devise_scope :user do
@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     get "logout", :to => "users/sessions#destroy"
   end
   
-  resources :products
+  resources :products do
+    resources :reviews, only: [:create]
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
