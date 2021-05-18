@@ -13,7 +13,7 @@
             <%= f.hidden_field :sort_category, value: @category.id %>
               並び替え
               <% if @sorted.present? %>
-                <%= f.select :sort, @sort_list, selected: selected, onChange: "javascript: this.form.submit();", class: "form-inline ml-2" %>
+                <%= f.select :sort, @sort_list, selected: @sorted, onChange: "javascript: this.form.submit();", class: "form-inline ml-2" %>
               <% else %>
                 <%= f.select :sort, @sort_list, {}, onChange: "javascript: this.form.submit();", class: "form-inline ml-2" %>
               <% end %>
