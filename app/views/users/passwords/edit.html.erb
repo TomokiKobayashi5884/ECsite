@@ -12,9 +12,9 @@
               autocomplete: "new-password",
               placeholder: "新しいパスワード" %>
      
-            <% if resource.errors.messages[:email].present? %>
+            <% if resource.errors.messages[:password].present? %>
               <span class="samazon-error-message">
-                  <strong><%= resource.errors.full_messages_for(:email).first %></strong>
+                  <strong><%= resource.errors.full_messages_for(:password).first %></strong>
               </span>
             <% end %>
       </div>
