@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title><%= ENV["APP_NAME"] %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/a22d91eed4.js" crossorigin="anonymous"></script>
+    
+  </head>
+
+  <body>
+    
+      <%= render partial: 'layouts/dashboard/header' %>
+      
+      <div class="row">
+          <div class="col-3 mt-3">
+              <%= render partial: 'layouts/dashboard/sidebar' %>
+          </div>
+          <div class="col">
+             <main class="py-4 mb-5">
+               
+               <%= yield %>
+               
+             </main>
+          </div>
+      </div>
+  </body>
+</html>
